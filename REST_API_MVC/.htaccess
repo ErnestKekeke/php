@@ -1,0 +1,5 @@
+RewriteEngine On
+
+RewriteRule ^api/posts/([a-zA-Z0-9_-]+)/?$ api/posts.php?id=$1 [L,QSA]
+
+RewriteRule ^api/posts api/posts.php [L,QSA]
