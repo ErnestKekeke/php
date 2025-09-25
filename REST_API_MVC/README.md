@@ -3,6 +3,7 @@
 Author:
 The Author of this project is Ernest Kekeke.
 more about the author visit: https://www.youtube.com/@ernestKekeke
+github: https://github.com/ErnestKekeke/
 
 About 
 This project is a simple RESTful API built in PHP using the MVC architecture. It connects to a MySQL database (studentsdb) and performs CRUD operations on a users table.
@@ -59,8 +60,8 @@ Delete User	DELETE	/api/posts/{id}	Delete a new user by ID
 🔧 Setup Instructions
 
 1. Clone the Repository
-git clone https://github.com/yourusername/php-rest-api-mvc.git
-cd php-rest-api-mvc
+git clone https://github.com/ErnestKekeke/php.git
+cd php/rest_api_mvc
 
 2. Configure Database
 
