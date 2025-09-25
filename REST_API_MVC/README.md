@@ -107,14 +107,18 @@ http://localhost:8000/api/posts/1 — View user with ID = 1
 
 
 📝 Sample JSON Response
-✅ GET /api/posts
-[
-  {
-    "id": 1,
-    "name": "John",
-    "age": 20,
-    "subjects": ["Math", "Phy"],
-    "message": "I love my school",
-    "reg_date": "2025-09-25 12:30:45"
-  }
-]
+✅ GET /api/posts/4
+{
+    "status": 200,
+    "data": {
+        "id": "4",
+        "name": "Philip Clark",
+        "age": "29",
+        "subjects": [
+            "Maths",
+            "Geo"
+        ],
+        "message": "I love my school it means a lot to me..! ",
+        "reg_date": "2025-09-24 12:18:13"
+    }
+}
