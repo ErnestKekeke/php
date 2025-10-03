@@ -115,11 +115,9 @@ class Post extends Database
                 return -1;
             }
 
-
-
         } catch (PDOException $e) {
             $this->pdo = null;
-            die($id . "Updaed Failed: " . $e->getMessage());
+            die($id . "Update Failed: " . $e->getMessage());
         }
     }
 

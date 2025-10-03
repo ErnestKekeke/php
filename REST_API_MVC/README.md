@@ -1,4 +1,4 @@
-# Students REST API (PHP + MySQL)
+# Students REST API (OOP PHP + MySQL)
 
 Author:
 The Author of this project is Ernest Kekeke.

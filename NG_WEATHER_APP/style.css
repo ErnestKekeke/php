@@ -1,0 +1,413 @@
+/* ===== THEME VARIABLES ===== */
+:root {
+    --bg-gradient-start: #008751;
+    --bg-gradient-mid: #ffffff;
+    --bg-gradient-end: #008751;
+    --bg-white: white;
+    --bg-form: #f8f9fa;
+    --text-primary: #333;
+    --text-secondary: #555;
+    --text-white: white;
+    --text-black: black;
+    --border-color: #ddd;
+    --border-green: #008751;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --input-bg: white;
+    --green-primary: #008751;
+}
+
+[data-theme="dark"] {
+    --bg-gradient-start: #003d25;
+    --bg-gradient-mid: #0d2f0d;
+    --bg-gradient-end: #003d25;
+    --bg-white: #1a3d1a;
+    --bg-form: #162916;
+    --text-primary: #e8f5e8;
+    --text-secondary: #b8ddb8;
+    --text-white: #e8f5e8;
+    --text-black: #e8f5e8;
+    --border-color: #2d5f2d;
+    --border-green: #00b569;
+    --shadow-color: rgba(0, 181, 105, 0.4);
+    --shadow-light: rgba(0, 181, 105, 0.2);
+    --input-bg: #0d2f0d;
+    --green-primary: #00b569;
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-mid) 50%, var(--bg-gradient-end) 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: var(--text-primary);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* ===== THEME TOGGLE BUTTON ===== */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    background: var(--green-primary);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.theme-toggle:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px var(--shadow-color);
+}
+
+/* Header Styles */
+body > p:first-child {
+    text-align: center;
+    color: var(--text-black);
+    font-size: 14px;
+    margin-bottom: 10px;
+    opacity: 0.9;
+}
+
+h2 {
+    text-align: center;
+    color: var(--text-white);
+    font-size: 32px;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px var(--shadow-color);
+    font-weight: 700;
+}
+
+/* Form Container */
+body > div:first-of-type {
+    max-width: 750px;
+    margin: 0 auto 30px;
+    background: var(--bg-white);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px var(--shadow-color);
+    transition: all 0.3s ease;
+}
+
+/* Form Styles */
+form {
+    margin-bottom: 25px;
+    padding: 20px;
+    background: var(--bg-form);
+    border-radius: 10px;
+    border-left: 4px solid #667eea;
+    transition: all 0.3s ease;
+}
+
+form:last-of-type {
+    margin-bottom: 0;
+    border-left-color: #764ba2;
+}
+
+form span {
+    display: block;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+/* Input Styles */
+input[type="text"],
+input[type="number"],
+input[name="city"],
+input[name="lat"],
+input[name="lon"] {
+    padding: 12px 15px;
+    margin: 5px 8px 5px 0;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    background: var(--input-bg);
+    color: var(--text-primary);
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[name="city"]:focus,
+input[name="lat"]:focus,
+input[name="lon"]:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+input[name="city"] {
+    width: 200px;
+}
+
+input[name="lat"],
+input[name="lon"] {
+    width: 150px;
+}
+
+/* Button Styles */
+button {
+    padding: 8px 18px;
+    margin: 5px 5px 5px 0;
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+button[name="save"] {
+    background: #28a745;
+    color: white;
+}
+
+button[name="save"]:hover {
+    background: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.4);
+}
+
+button[name="update"] {
+    background: #ffc107;
+    color: #333;
+}
+
+button[name="update"]:hover {
+    background: #e0a800;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 193, 7, 0.4);
+}
+
+button[name="delete"] {
+    background: #dc3545;
+    color: white;
+}
+
+button[name="delete"]:hover {
+    background: #c82333;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(220, 53, 69, 0.4);
+}
+
+button[name="btnSearch"],
+button#search_btn {
+    background: #667eea;
+    color: white;
+    animation: float 3s ease-in-out infinite;
+}
+
+button[name="btnSearch"]:hover,
+button#search_btn:hover {
+    background: #5568d3;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.5);
+    animation: none;
+}
+
+button#auto_btn {
+    background: #17a2b8;
+    color: white;
+    animation: float 3s ease-in-out infinite;
+    animation-delay: 0.5s;
+}
+
+button#auto_btn:hover {
+    background: #138496;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(23, 162, 184, 0.5);
+    animation: none;
+}
+
+/* ===== FLOATING ANIMATION ===== */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+        box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+    }
+    50% {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(102, 126, 234, 0.6);
+    }
+}
+
+/* Weather Information Container */
+body > div:nth-of-type(2) {
+    max-width: 650px;
+    margin: 0 auto 30px;
+    background: var(--bg-white);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px var(--shadow-color);
+    border: 3px solid var(--border-green);
+    transition: all 0.3s ease;
+}
+
+body > div:nth-of-type(2) > p:first-child {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--green-primary);
+    margin-bottom: 18px;
+    padding-bottom: 12px;
+    border-bottom: 3px solid var(--border-green);
+    text-align: center;
+    font-family: 'Georgia', serif;
+}
+
+body > div:nth-of-type(2) p {
+    padding: 8px 0;
+    font-size: 15px;
+    color: var(--text-primary);
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border-color);
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+}
+
+body > div:nth-of-type(2) p:last-child {
+    border-bottom: none;
+}
+
+body > div:nth-of-type(2) b {
+    color: var(--green-primary);
+    font-weight: 700;
+    font-size: 25px;
+}
+
+/* Message Styles */
+#p_msg {
+    max-width: 650px;
+    margin: 20px auto;
+    padding: 15px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-align: center;
+    background: var(--bg-white);
+    box-shadow: 0 4px 12px var(--shadow-light);
+    transition: all 0.3s ease;
+}
+
+/* Auto Update Container */
+body > div:last-of-type {
+    max-width: 650px;
+    margin: 0 auto;
+    background: var(--bg-white);
+    padding: 20px 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px var(--shadow-color);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+body > div:last-of-type span {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+#upd_sec,
+#search_city {
+    width: 100px;
+    padding: 10px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 14px;
+    text-align: center;
+    background: var(--input-bg);
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+}
+
+#search_city {
+    width: 200px;
+    text-align: left;
+}
+
+#upd_sec:focus,
+#search_city:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .theme-toggle {
+        top: 10px;
+        right: 10px;
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    
+    h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    
+    body > div:first-of-type,
+    body > div:nth-of-type(2),
+    body > div:last-of-type {
+        padding: 20px;
+    }
+    
+    form {
+        padding: 15px;
+    }
+    
+    input[name="city"],
+    input[name="lat"],
+    input[name="lon"],
+    #search_city {
+        width: 100%;
+        margin: 5px 0;
+    }
+    
+    button {
+        width: 100%;
+        margin: 5px 0;
+    }
+    
+    body > div:nth-of-type(2) p {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    
+    body > div:last-of-type span {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    #upd_sec {
+        width: 100%;
+    }
+}
